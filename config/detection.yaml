@@ -1,0 +1,8 @@
+# ── Detection Configuration ──────────────────────────────────────────────────
+detection:
+  model_path: "/lindet_ws/models/yolov8n.engine"
+  confidence_threshold: 0.25
+  nms_threshold: 0.45
+  num_classes: 80
+  # COCO class names (80 classes)
+  # person=0, car=2, motorcycle=3, bus=5, truck=7

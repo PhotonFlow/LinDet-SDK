@@ -1,0 +1,17 @@
+# ── Analytics Configuration ──────────────────────────────────────────────────
+analytics:
+  fps: 30.0
+  speed_threshold: 100.0   # normalized units/s, set to Inf to disable
+
+  # Zone intrusion: polygon vertices in normalized [0,1] coordinates
+  # Example: a rectangular zone in the center of the frame
+  zones_json: |
+    {
+      "restricted_area": [[0.3, 0.3], [0.7, 0.3], [0.7, 0.7], [0.3, 0.7]]
+    }
+
+  # Counting lines: pairs of endpoints in normalized [0,1] coordinates
+  lines_json: |
+    [
+      {"p1": [0.0, 0.5], "p2": [1.0, 0.5], "name": "horizontal_line"}
+    ]

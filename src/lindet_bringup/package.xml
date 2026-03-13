@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lindet_bringup</name>
+  <version>1.0.0</version>
+  <description>Launch files and system configuration for LinDet-SDK.</description>
+  <maintainer email="dev@lindet.local">LinDet Team</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>lindet_camera</exec_depend>
+  <exec_depend>lindet_detection</exec_depend>
+  <exec_depend>lindet_tracker</exec_depend>
+  <exec_depend>lindet_pose</exec_depend>
+  <exec_depend>lindet_analytics</exec_depend>
+  <exec_depend>lindet_visualization</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

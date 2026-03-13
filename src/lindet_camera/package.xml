@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>stereo_skeleton</name>
-  <version>0.0.1</version>
-  <description>Minimal stereo skeleton package for testing build and runtime.</description>
+  <name>lindet_camera</name>
+  <version>1.0.0</version>
+  <description>GStreamer-based camera driver for LinDet-SDK. Supports CSI, USB, RTSP, and test sources.</description>
   <maintainer email="dev@lindet.local">LinDet Team</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
   <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
   </export>
 </package>
-

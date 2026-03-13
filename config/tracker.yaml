@@ -1,0 +1,7 @@
+# ── Tracker Configuration ────────────────────────────────────────────────────
+tracker:
+  high_thresh: 0.5      # minimum confidence for first-pass matching
+  low_thresh: 0.1       # minimum confidence for second-pass (ByteTrack recovery)
+  match_thresh: 0.3     # IoU threshold for Hungarian matching
+  max_age: 30           # max frames to keep unmatched track alive
+  min_hits: 3           # min matches before track is confirmed

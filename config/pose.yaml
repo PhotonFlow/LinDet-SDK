@@ -1,0 +1,5 @@
+# ── Pose Estimation Configuration ────────────────────────────────────────────
+pose:
+  model_path: "/lindet_ws/models/yolov8n-pose.engine"
+  keypoint_threshold: 0.3
+  person_class_id: 0    # COCO person class

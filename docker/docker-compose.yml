@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  lindet:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    # ── Runtime GPU access ────────────────────────────────────────────────
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - DISPLAY=${DISPLAY}
+
+    # ── Device access (cameras) ───────────────────────────────────────────
+    devices:
+      - /dev/video0:/dev/video0
+
+    # ── Shared memory for ROS 2 zero-copy ─────────────────────────────────
+    ipc: host
+    network_mode: host
+    pid: host
+
+    # ── Volume mounts ─────────────────────────────────────────────────────
+    volumes:
+      - ../models:/lindet_ws/models:ro
+      - ../config:/lindet_ws/config:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+
+    # ── Default command ───────────────────────────────────────────────────
+    command: >
+      ros2 launch lindet_bringup lindet_system.launch.py
+        source_type:=usb
+        device:=/dev/video0
+        model_path:=/lindet_ws/models/yolov8n.engine
+        pose_model_path:=/lindet_ws/models/yolov8n-pose.engine
